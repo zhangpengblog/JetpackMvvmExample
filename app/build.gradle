@@ -5,17 +5,23 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion COMPILER_SDK_VERSION.toInteger()
+    buildToolsVersion BUILD_TOOL_VERSION
 
     defaultConfig {
         applicationId "com.zhangpengblog.jetpackmvvmexample"
-        minSdkVersion 26
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion MIN_SDK_VERSION.toInteger()
+        targetSdkVersion TAR_SDK_VERSION.toInteger()
+        versionCode VERSION_CODE.toInteger()
+        versionName VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
 
     buildTypes {
@@ -36,7 +42,7 @@ android {
 }
 
 dependencies {
-
+    implementation project(path: ':mybaselibrary')
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -49,10 +55,10 @@ dependencies {
 
 
 
-//        if (!IS_APPLICATION.toBoolean()) {//ARounter 配置路由
-////            implementation project(path: ':account')
-//
-//        }
+        if (!IS_APPLICATION.toBoolean()) {//ARounter 配置路由
+            implementation project(path: ':account')
+
+        }
 
 
 

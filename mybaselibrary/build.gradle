@@ -1,8 +1,5 @@
-//判断是为模块
-if (IS_APPLICATION.toBoolean()){//独立应用
-    apply plugin: 'com.android.application'
-}else {//模块
-    apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
 }
 
 android {
@@ -10,19 +7,14 @@ android {
     buildToolsVersion BUILD_TOOL_VERSION
 
     defaultConfig {
-        applicationId "com.zhangpengblog.account"
         minSdkVersion MIN_SDK_VERSION.toInteger()
         targetSdkVersion TAR_SDK_VERSION.toInteger()
         versionCode VERSION_CODE.toInteger()
         versionName VERSION_NAME
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
-        }
     }
 
     buildTypes {
@@ -38,10 +30,9 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':mybaselibrary')
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

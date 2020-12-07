@@ -1,3 +1,4 @@
+include ':mybaselibrary'
 include ':account'
 include ':app'
 rootProject.name = "JetpackMvvmExample"
