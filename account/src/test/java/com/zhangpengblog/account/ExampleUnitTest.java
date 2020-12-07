@@ -1,4 +1,4 @@
-package com.example.jetpackmvvmexample;
+package com.zhangpengblog.account;
 
 import org.junit.Test;
 
