@@ -1,8 +1,10 @@
-package com.zhangpengblog.jetpackmvvmexample;
+package com.zhangpengblog.jetpackmvvmexample.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.zhangpengblog.jetpackmvvmexample.R;
 
 public class MainActivity extends AppCompatActivity {
 

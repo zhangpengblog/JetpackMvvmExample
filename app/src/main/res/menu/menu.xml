@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_fragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/firstFragment" />
+    <item
+        android:id="@+id/game_fragment"
+        android:icon="@drawable/ic_baseline_android_24"
+        android:title="@string/secondFragment" />
+    <item
+        android:id="@+id/kaifu_fragment"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="@string/thirdFragment" />
+<!--    <item-->
+<!--        android:id="@+id/myself_fragment"-->
+<!--        android:icon="@drawable/ic_baseline_perm_identity_24"-->
+<!--        android:title="@string/myself_fragment_title" />-->
+</menu>
