@@ -10,7 +10,9 @@ android {
     buildToolsVersion BUILD_TOOL_VERSION
 
     defaultConfig {
-        applicationId "com.zhangpengblog.account"
+        if (IS_APPLICATION.toBoolean()){//独立应用
+            applicationId "com.zhangpengblog.account"
+        }
         minSdkVersion MIN_SDK_VERSION.toInteger()
         targetSdkVersion TAR_SDK_VERSION.toInteger()
         versionCode VERSION_CODE.toInteger()
