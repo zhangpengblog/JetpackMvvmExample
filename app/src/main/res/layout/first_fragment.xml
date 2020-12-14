@@ -6,9 +6,10 @@
     tools:context=".ui.fragment.first.FirstFragment">
 
     <TextView
+        android:id="@+id/firstFragment_textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello"
+        android:text="First"
         android:textSize="30sp"/>
 
 </FrameLayout>

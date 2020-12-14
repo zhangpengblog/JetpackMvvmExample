@@ -6,8 +6,10 @@
     tools:context=".ui.fragment.third.ThirdFragment">
 
     <TextView
+        android:id="@+id/thirdFragment_textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:text="Third"
+        android:textSize="30sp" />
 
 </FrameLayout>

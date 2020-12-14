@@ -28,7 +28,7 @@ public class MainActivity extends BaseAppActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setBaseContentView (R.layout.activity_main);
+        setBaseContentViewWithoutTitle (R.layout.activity_main);
 //        hideActionBar();
         UiUtils.setStatusBarTransparent (this,true);
         firstFragment = FirstFragment.newInstance ();

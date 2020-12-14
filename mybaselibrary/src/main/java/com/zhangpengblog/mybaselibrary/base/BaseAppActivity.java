@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -16,10 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleObserver;
 
@@ -107,7 +103,7 @@ public class BaseAppActivity extends FragmentActivity implements LifecycleObserv
         //给EditText的父控件设置焦点，防止键盘自动弹出
         view.setFocusable(true);
         view.setFocusableInTouchMode(true);
-        Point point= UiUtils.GetDevice (this);
+        Point point= UiUtils.GetDeviceSize (this);
         MyLog.d (TAG, "onCreate: " + getLocalClassName ());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 point.x, point.y);
@@ -117,10 +113,10 @@ public class BaseAppActivity extends FragmentActivity implements LifecycleObserv
     /**
      * 底部有固定view，给底部view留出空间
      * @param layoutId
-     * @param floatView
      */
-    public void setBaseContentView(int layoutId,View floatView) {
+    public void setBaseContentViewWithoutTitle(int layoutId) {
         //当子布局高度值不足ScrollView时，用这个方法可以充满ScrollView，防止布局无法显示
+        bar.setVisibility (View.GONE);
         FrameLayout layout = findViewById(R.id.base_main_layout);
         //获取布局，并在BaseActivity基础上显示
         final View view = getLayoutInflater().inflate(layoutId, null);
@@ -129,7 +125,7 @@ public class BaseAppActivity extends FragmentActivity implements LifecycleObserv
         //给EditText的父控件设置焦点，防止键盘自动弹出
         view.setFocusable(true);
         view.setFocusableInTouchMode(true);
-        Point point= UiUtils.GetDevice (this);
+        Point point= UiUtils.GetDeviceSize (this);
         MyLog.d (TAG, "onCreate: " + getLocalClassName ());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 point.x, point.y);

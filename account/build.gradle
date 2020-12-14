@@ -50,7 +50,12 @@ android {
 
 dependencies {
     implementation project(path: ':mybaselibrary')
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation APP_COMPAT
+    implementation LIFECYCLE
+    implementation AROUTER_API
+    annotationProcessor AROUTER_COMPILER
+    implementation Retrofit
+    implementation Retrofit_Gson
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'
