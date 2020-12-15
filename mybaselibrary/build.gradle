@@ -46,4 +46,6 @@ dependencies {
     implementation 'org.xutils:xutils:3.9.0'
     implementation AROUTER_API
     annotationProcessor AROUTER_COMPILER
+    implementation Retrofit
+    implementation Retrofit_Gson
 }
